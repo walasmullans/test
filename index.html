@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walasmulla National School - Interhouse Sports Meet</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+  /* Custom CSS (optional) */
+  .highlighted {
+  background-color: yellow;
+  }
+  </style>
+ </head>
+ <body class="font-sans bg-gray-100">
+
+  <!-- Header Section -->
+  <header class="bg-green-600 text-white text-center py-8">
+  <h1 class="text-4xl font-bold mb-2">Interhouse Sports Meet</h1>
+  <p class="text-lg">Walasmulla National School</p>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="container mx-auto mt-8 p-4">
+
+  <!-- Introduction Section -->
+  <section class="mb-8">
+  <h2 class="text-3xl font-semibold mb-4">Welcome to the Sports Meet!</h2>
+  <p class="text-gray-700 leading-relaxed">
+  Join us for a day of thrilling competitions, spirited house rivalries, and unforgettable moments.
+  Get ready to cheer on your favorite athletes and witness the power of teamwork!
+  </p>
+  </section>
+
+  <!-- Schedule Section -->
+  <section class="mb-8">
+  <h2 class="text-2xl font-semibold mb-4">Event Schedule</h2>
+  <table class="table-auto w-full">
+  <thead>
+  <tr>
+  <th class="px-4 py-2">Time</th>
+  <th class="px-4 py-2">Event</th>
+  <th class="px-4 py-2">House</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td class="border px-4 py-2">9:00 AM</td>
+  <td class="border px-4 py-2">Opening Ceremony</td>
+  <td class="border px-4 py-2">All</td>
+  </tr>
+  <tr>
+  <td class="border px-4 py-2">10:00 AM</td>
+  <td class="border px-4 py-2">100m Race</td>
+  <td class="border px-4 py-2">Red/Blue</td>
+  </tr>
+  <tr>
+  <td class="border px-4 py-2">11:00 AM</td>
+  <td class="border px-4 py-2">Vehicle Parade</td>
+  <td class="border px-4 py-2">All</td>
+  </tr>
+  </tbody>
+  </table>
+  </section>
+
+  <!-- Vehicle Parade Section -->
+  <section class="mb-8">
+  <h2 class="text-2xl font-semibold mb-4">Vehicle Parade</h2>
+  <p class="text-gray-700 leading-relaxed mb-4">
+  Showcase your house spirit and creativity with decorated vehicles! Prizes will be awarded for the most innovative and spirited entries.
+  </p>
+  <img src="https://via.placeholder.com/640x360" alt="Vehicle Parade" class="rounded-lg shadow-md">
+  </section>
+
+  <!-- Vehicle Registration Form -->
+  <section>
+  <h2 class="text-2xl font-semibold mb-4">Vehicle Registration Form</h2>
+  <form id="vehicleForm" class="max-w-lg mx-auto">
+  <div class="mb-4">
+  <label for="ownerName" class="block text-gray-700 text-sm font-bold mb-2">Owner's Name:</label>
+  <input type="text" id="ownerName" name="ownerName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your name">
+  </div>
+  <div class="mb-4">
+  <label for="vehicleType" class="block text-gray-700 text-sm font-bold mb-2">Vehicle Type:</label>
+  <input type="text" id="vehicleType" name="vehicleType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., Car, Van, Truck">
+  </div>
+  <div class="mb-4">
+  <label for="house" class="block text-gray-700 text-sm font-bold mb-2">House:</label>
+  <select id="house" name="house" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  <option value="red">Red House</option>
+  <option value="blue">Blue House</option>
+  <option value="green">Green House</option>
+  <option value="yellow">Yellow House</option>
+  </select>
+  </div>
+  <div class="mb-4">
+  <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Vehicle Description:</label>
+  <textarea id="description" name="description" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Describe your vehicle decoration"></textarea>
+  </div>
+
+  <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Register</button>
+  </form>
+  </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-200 text-center py-4 mt-8">
+  <p>©️ 2025 Walasmulla National School</p>
+  </footer>
+
+  <script>
+  document.getElementById('vehicleForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Get form values
+  const ownerName = document.getElementById('ownerName').value;
+  const vehicleType = document.getElementById('vehicleType').value;
+  const house = document.getElementById('house').value;
+  const description = document.getElementById('description').value;
+
+  // Construct the WhatsApp message
+  const message = `Vehicle Registration:\nOwner's Name: ${ownerName}\nVehicle Type: ${vehicleType}\nHouse: ${house}\nDescription: ${description}`;
+
+  // Replace with your WhatsApp number
+  const whatsappNumber = '+1234567890';
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  // Open WhatsApp in a new tab
+  window.open(whatsappURL, '_blank');
+  });
+  </script>
+
+ </body>
+ </html>
